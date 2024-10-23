@@ -51,6 +51,7 @@ class GameLanguageScreen extends StatelessWidget {
                       text: 'change_language'.tr,
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w500,
+                      color: Colors.white,
                     )
                   ],
                 ),

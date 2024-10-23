@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:blackjack/views/screens/game/bj_game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -202,7 +203,7 @@ class _PlayScreenState extends State<PlayScreen> {
                 // ),
                 CustomGameButton(
                   onTap: () {
-                    //Get.to(() => const SlotGameScreen());
+                    Get.to(() => const BlackJackGame());
                   },
                   width: 0.2.sh,
                   text: 'play'.tr,

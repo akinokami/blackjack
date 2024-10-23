@@ -50,11 +50,15 @@ class GameSettingScreen extends StatelessWidget {
                     text: 'settings'.tr,
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w500,
+                    color: Colors.white,
                   )
                 ],
               ),
               kSizedBoxH15,
-              CustomText(text: 'general'.tr),
+              CustomText(
+                text: 'general'.tr,
+                color: Colors.white,
+              ),
               SizedBox(height: 5.h),
               GestureDetector(
                 onTap: () {
@@ -138,7 +142,10 @@ class GameSettingScreen extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              CustomText(text: 'other'.tr),
+              CustomText(
+                text: 'other'.tr,
+                color: Colors.white,
+              ),
               SizedBox(height: 5.h),
               GestureDetector(
                 onTap: () {
