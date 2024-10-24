@@ -31,5 +31,7 @@ class ZhLanguage {
     'draw': '畫',
     'bet_history': '投注歷史',
     'ok': '好的',
+    'insufficient_balance': '餘額不足',
+    'check_balance': '請檢查您的餘額。',
   };
 }

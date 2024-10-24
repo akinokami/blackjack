@@ -31,5 +31,7 @@ class KoLanguage {
     'draw': '그리다',
     'bet_history': '베팅 내역',
     'ok': '좋아요',
+    'insufficient_balance': '잔액 부족',
+    'check_balance': '잔액을 확인해주세요.',
   };
 }

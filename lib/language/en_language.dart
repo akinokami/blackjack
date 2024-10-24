@@ -31,5 +31,7 @@ class EnLanguage {
     'draw': 'Draw',
     'bet_history': 'Bet History',
     'ok': 'OK',
+    'insufficient_balance': 'Insufficient balance',
+    'check_balance': 'Please check your balance.',
   };
 }

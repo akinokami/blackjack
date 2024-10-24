@@ -31,10 +31,15 @@ class GameServiceImpl extends GameService {
 
   @override
   void startNewGame() {
-    player.hand = _cardService.drawCards(2);
-    dealer.hand = _cardService.drawCards(2);
-    _cardService.new52Deck();
-    gameState = GameState.playerActive;
+    if (player.bet > player.wallet) {
+      constants.showDialog(
+          title: 'insufficient_balance'.tr, desc: 'check_balance'.tr);
+    } else {
+      player.hand = _cardService.drawCards(2);
+      dealer.hand = _cardService.drawCards(2);
+      _cardService.new52Deck();
+      gameState = GameState.playerActive;
+    }
   }
 
   @override

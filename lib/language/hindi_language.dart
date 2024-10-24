@@ -31,5 +31,7 @@ class HiLanguage {
     'draw': 'खींचना',
     'bet_history': 'शर्त इतिहास',
     'ok': 'ठीक है',
+    'insufficient_balance': 'अपर्याप्त शेषराशि',
+    'check_balance': 'कृपया अपना बैलेंस जांचें.',
   };
 }

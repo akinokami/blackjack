@@ -29,5 +29,7 @@ class ViLanguage {
     'draw': 'Vẽ tranh',
     'bet_history': 'Lịch sử đặt cược',
     'ok': 'ĐƯỢC RỒI',
+    'insufficient_balance': 'Số dư không đủ',
+    'check_balance': 'Vui lòng kiểm tra số dư của bạn.',
   };
 }
