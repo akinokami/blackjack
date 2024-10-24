@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:playing_cards/playing_cards.dart';
 
 const START_MONEY = 10000;

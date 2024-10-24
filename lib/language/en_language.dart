@@ -17,5 +17,9 @@ class EnLanguage {
     'no_data': 'No data found',
     'play': 'Play',
     'sound': 'Sound',
+    'exit': 'Exit',
+    'new_bet': 'New Bet',
+    'stand': 'Stand',
+    'hit': 'Hit',
   };
 }

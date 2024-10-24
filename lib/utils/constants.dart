@@ -1,6 +1,10 @@
+import 'package:blackjack/utils/color_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import '../views/widgets/custom_button.dart';
+import '../views/widgets/custom_text.dart';
 
 Constants constants = Constants();
 
@@ -23,23 +27,114 @@ class Constants {
     );
   }
 
-  void showDialog(String title, String desc, VoidCallback? onTap) {
-    Get.defaultDialog(
-        titlePadding: EdgeInsets.all(10.w),
-        contentPadding: EdgeInsets.all(10.w),
-        title: title,
-        middleText: desc,
+  void showDialog({
+    required String title,
+    required String desc,
+    IconData? icon,
+    Color? iconColor,
+    double? iconSize,
+    VoidCallback? onConfirm,
+    VoidCallback? onCancel,
+  }) {
+    Get.dialog(
+      AlertDialog(
         backgroundColor: Colors.white,
-        titleStyle: TextStyle(color: Colors.black, fontSize: 15.sp),
-        middleTextStyle: TextStyle(color: Colors.black, fontSize: 12.sp),
-        textConfirm: 'yes'.tr,
-        textCancel: 'no'.tr,
-        cancelTextColor: Colors.black,
-        confirmTextColor: Colors.white,
-        buttonColor: const Color(0xff8f7a66),
-        barrierDismissible: false,
-        radius: 10.r,
-        onConfirm: onTap);
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5.r),
+        ),
+        title: Column(children: [
+          Visibility(
+            visible: icon != null,
+            child: Icon(
+              icon,
+              color: iconColor ?? secondaryColor,
+              size: iconSize ?? 20.sp,
+            ),
+          ),
+          CustomText(
+            text: title,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+          ),
+        ]),
+        content: CustomText(
+          text: desc,
+          maxLines: 5,
+        ),
+        actions: [
+          CustomButton(
+            width: 65.w,
+            height: 30.h,
+            text: 'cancel'.tr,
+            outlineColor: Colors.red,
+            bgColor: Colors.red,
+            txtColor: Colors.white,
+            onTap: onCancel ??
+                () {
+                  Get.back();
+                },
+          ),
+          CustomButton(
+            width: 65.w,
+            height: 30.h,
+            text: 'confirm'.tr,
+            outlineColor: secondaryColor,
+            txtColor: Colors.white,
+            onTap: onConfirm ??
+                () {
+                  Get.back();
+                },
+          ),
+        ],
+      ),
+      barrierDismissible: false,
+    );
+  }
+
+  void showConglaturationDialog({
+    required String title,
+    required String desc,
+    required String image,
+    VoidCallback? onConfirm,
+    VoidCallback? onCancel,
+  }) {
+    Get.dialog(
+      AlertDialog(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5.r),
+        ),
+        title: Column(children: [
+          Image.asset(
+            image,
+            width: 1.sw * 0.70,
+          ),
+          CustomText(
+            text: title,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+          ),
+        ]),
+        content: CustomText(
+          text: desc,
+          maxLines: 5,
+        ),
+        actions: [
+          CustomButton(
+            width: 65.w,
+            height: 30.h,
+            text: 'ok'.tr,
+            outlineColor: secondaryColor,
+            txtColor: Colors.white,
+            onTap: onConfirm ??
+                () {
+                  Get.back();
+                },
+          ),
+        ],
+      ),
+      barrierDismissible: false,
+    );
   }
 }
 

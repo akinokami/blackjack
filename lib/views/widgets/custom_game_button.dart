@@ -70,10 +70,13 @@ class CustomGameButton extends StatelessWidget {
           children: [
             Visibility(
               visible: icon != null,
-              child: Icon(
-                icon ?? Icons.abc,
-                color: iconColor ?? Colors.black,
-                size: iconSize ?? 18.sp,
+              child: Padding(
+                padding: EdgeInsets.only(right: 5.w),
+                child: Icon(
+                  icon ?? Icons.abc,
+                  color: iconColor ?? Colors.black,
+                  size: iconSize ?? 18.sp,
+                ),
               ),
             ),
             Visibility(
