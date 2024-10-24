@@ -15,5 +15,17 @@ class ViLanguage {
     'please_wait': 'Vui lòng đợi',
     'play': 'Chơi',
     'sound': 'Âm thanh',
+    'exit': 'Ra',
+    'are_you_sure_to_exit': 'Bạn có chắc chắn thoát ra không?',
+    'new_bet': 'Cược mới',
+    'stand': 'Đứng',
+    'hit': 'Đánh',
+    'you_win': 'Bạn thắng!',
+    'you_lose': 'Bạn thua!',
+    'dealer_score': 'Điểm đại lý',
+    'your_score': 'Điểm của bạn',
+    'cancel': 'Cancel',
+    'confirm': 'Confirm',
+    'draw': 'Draw',
   };
 }

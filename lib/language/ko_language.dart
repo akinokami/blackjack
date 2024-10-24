@@ -17,5 +17,17 @@ class KoLanguage {
     'no_data': '데이터가 없습니다',
     'play': '놀다',
     'sound': '소리',
+    'exit': '출구',
+    'are_you_sure_to_exit': '정말 나가시겠어요?',
+    'new_bet': '새로운 베팅',
+    'stand': '서다',
+    'hit': '때리다',
+    'you_win': '당신이 승리!',
+    'you_lose': '당신은 패배합니다!',
+    'dealer_score': '딜러점수',
+    'your_score': '당신의 점수',
+    'cancel': 'Cancel',
+    'confirm': 'Confirm',
+    'draw': 'Draw',
   };
 }

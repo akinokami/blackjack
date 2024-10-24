@@ -33,6 +33,8 @@ class Constants {
     IconData? icon,
     Color? iconColor,
     double? iconSize,
+    Color? titleColor,
+    Widget? widget,
     VoidCallback? onConfirm,
     VoidCallback? onCancel,
   }) {
@@ -55,12 +57,82 @@ class Constants {
             text: title,
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
+            color: titleColor ?? Colors.black,
           ),
         ]),
-        content: CustomText(
-          text: desc,
-          maxLines: 5,
+        content: widget ??
+            CustomText(
+              text: desc,
+              maxLines: 5,
+            ),
+        actions: [
+          // CustomButton(
+          //   width: 65.w,
+          //   height: 30.h,
+          //   text: 'cancel'.tr,
+          //   outlineColor: Colors.red,
+          //   bgColor: Colors.red,
+          //   txtColor: Colors.white,
+          //   onTap: onCancel ??
+          //       () {
+          //         Get.back();
+          //       },
+          // ),
+          CustomButton(
+            width: 65.w,
+            height: 30.h,
+            text: 'ok'.tr,
+            outlineColor: secondaryColor,
+            txtColor: Colors.white,
+            onTap: onConfirm ??
+                () {
+                  Get.back();
+                },
+          ),
+        ],
+      ),
+      barrierDismissible: false,
+    );
+  }
+
+  void showDefaultDialog({
+    required String title,
+    required String desc,
+    IconData? icon,
+    Color? iconColor,
+    double? iconSize,
+    Color? titleColor,
+    Widget? widget,
+    VoidCallback? onConfirm,
+    VoidCallback? onCancel,
+  }) {
+    Get.dialog(
+      AlertDialog(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5.r),
         ),
+        title: Column(children: [
+          Visibility(
+            visible: icon != null,
+            child: Icon(
+              icon,
+              color: iconColor ?? secondaryColor,
+              size: iconSize ?? 20.sp,
+            ),
+          ),
+          CustomText(
+            text: title,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+            color: titleColor ?? Colors.black,
+          ),
+        ]),
+        content: widget ??
+            CustomText(
+              text: desc,
+              maxLines: 5,
+            ),
         actions: [
           CustomButton(
             width: 65.w,

@@ -94,43 +94,44 @@ class _BlackJackGameState extends State<BlackJackGame> {
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          CustomGameButton(
-                            width: 100.w,
-                            text: _gameService.getGameState() !=
-                                    GameState.playerActive
-                                ? 'new_bet'.tr
-                                : 'finish'.tr,
-                            textColor: Colors.white,
-                            onTap: () {
-                              if (_gameService.getGameState() ==
-                                  GameState.playerActive) {
-                                _gameService.endTurn();
-                              } else {
-                                _gameService.startNewGame();
-                              }
-                              setState(() {});
-                            },
-                          ),
-                          Container(
-                              margin: EdgeInsets.only(top: 15.h),
-                              child: Column(
-                                children: [
-                                  if (_gameService.getGameState() !=
-                                      GameState.playerActive) ...[
-                                    Text("Winner: ${_gameService.getWinner()}"),
-                                    Text(
-                                        "Dealer score: ${_gameService.getScore(_gameService.getDealer())}"),
-                                    Text(
-                                        "Player  score: ${_gameService.getScore(_gameService.getPlayer())}"),
-                                  ],
-                                ],
-                              )),
-                        ]),
-                  ),
+                  Expanded(child: Container())
+                  // Expanded(
+                  //   child: Column(
+                  //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //       children: [
+                  //         CustomGameButton(
+                  //           width: 100.w,
+                  //           text: _gameService.getGameState() !=
+                  //                   GameState.playerActive
+                  //               ? 'new_bet'.tr
+                  //               : 'finish'.tr,
+                  //           textColor: Colors.white,
+                  //           onTap: () {
+                  //             if (_gameService.getGameState() ==
+                  //                 GameState.playerActive) {
+                  //               _gameService.endTurn();
+                  //             } else {
+                  //               _gameService.startNewGame();
+                  //             }
+                  //             setState(() {});
+                  //           },
+                  //         ),
+                  //         Container(
+                  //             margin: EdgeInsets.only(top: 15.h),
+                  //             child: Column(
+                  //               children: [
+                  //                 if (_gameService.getGameState() !=
+                  //                     GameState.playerActive) ...[
+                  //                   Text("Winner: ${_gameService.getWinner()}"),
+                  //                   Text(
+                  //                       "Dealer score: ${_gameService.getScore(_gameService.getDealer())}"),
+                  //                   Text(
+                  //                       "Player  score: ${_gameService.getScore(_gameService.getPlayer())}"),
+                  //                 ],
+                  //               ],
+                  //             )),
+                  //       ]),
+                  // ),
                 ],
               ),
             ),
@@ -235,12 +236,12 @@ class _BlackJackGameState extends State<BlackJackGame> {
                         text: 'new_bet'.tr,
                         textColor: Colors.white,
                         onTap: () {
-                          if (_gameService.getGameState() ==
-                              GameState.playerActive) {
-                            _gameService.endTurn();
-                          } else {
-                            _gameService.startNewGame();
-                          }
+                          // if (_gameService.getGameState() ==
+                          //     GameState.playerActive) {
+                          //   _gameService.endTurn();
+                          // } else {
+                          _gameService.startNewGame();
+                          //}
                           setState(() {});
                         },
                       ),
@@ -256,12 +257,12 @@ class _BlackJackGameState extends State<BlackJackGame> {
                         textColor: Colors.white,
                         iconColor: Colors.white,
                         onTap: () {
-                          if (_gameService.getGameState() ==
-                              GameState.playerActive) {
-                            _gameService.endTurn();
-                          } else {
-                            _gameService.startNewGame();
-                          }
+                          // if (_gameService.getGameState() ==
+                          //     GameState.playerActive) {
+                          _gameService.endTurn();
+                          // } else {
+                          //   _gameService.startNewGame();
+                          // }
                           setState(() {});
                         },
                       ),

@@ -1,5 +1,12 @@
 import 'package:blackjack/services/card_service_impl.dart';
 import 'package:blackjack/services/game_service.dart';
+import 'package:blackjack/utils/color_const.dart';
+import 'package:blackjack/utils/constants.dart';
+import 'package:blackjack/utils/dimen_const.dart';
+import 'package:blackjack/views/widgets/custom_text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:playing_cards/playing_cards.dart';
 
 import '../models/player_model.dart';
@@ -55,8 +62,10 @@ class GameServiceImpl extends GameService {
     // Find game result
     if (burntDealer && burntPlayer) {
       gameState = GameState.equal;
+      drawDialog();
     } else if (dealerScore == playerScore) {
       gameState = GameState.equal;
+      drawDialog();
     } else if (burntDealer && playerScore <= HIGHES_SCORE_VALUE) {
       playerWon();
     } else if (burntPlayer && dealerScore <= HIGHES_SCORE_VALUE) {
@@ -68,11 +77,58 @@ class GameServiceImpl extends GameService {
     }
   }
 
+  void drawDialog() {
+    constants.showDialog(
+      title: 'draw'.tr,
+      desc: '',
+      widget: SizedBox(
+        height: 40.h,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomText(
+              text: "${'dealer_score'.tr} : ${getScore(getDealer())}",
+            ),
+            CustomText(
+              text: "${'your_score'.tr} : ${getScore(getPlayer())}",
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   void playerWon() {
     gameState = GameState.playerWon;
     player.won += 1;
     dealer.lose += 1;
     player.wonBet();
+    constants.showDialog(
+      title: 'you_win'.tr,
+      titleColor: secondaryColor,
+      desc: '',
+      widget: SizedBox(
+        height: 55.h,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomText(
+              text: "+ ${player.bet * BET_MULTIPLICATOR}",
+              color: secondaryColor,
+              fontWeight: FontWeight.bold,
+              fontSize: 14.sp,
+            ),
+            kSizedBoxH5,
+            CustomText(
+              text: "${'dealer_score'.tr} : ${getScore(getDealer())}",
+            ),
+            CustomText(
+              text: "${'your_score'.tr} : ${getScore(getPlayer())}",
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   void dealerWon() {
@@ -80,6 +136,32 @@ class GameServiceImpl extends GameService {
     dealer.won += 1;
     player.lose += 1;
     player.lostBet();
+    constants.showDialog(
+      title: 'you_lose'.tr,
+      titleColor: red,
+      desc: '',
+      widget: SizedBox(
+        height: 55.h,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomText(
+              text: "- ${player.bet}",
+              color: red,
+              fontWeight: FontWeight.bold,
+              fontSize: 14.sp,
+            ),
+            kSizedBoxH5,
+            CustomText(
+              text: "${'dealer_score'.tr} : ${getScore(getDealer())}",
+            ),
+            CustomText(
+              text: "${'your_score'.tr} : ${getScore(getPlayer())}",
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override

@@ -17,5 +17,17 @@ class HiLanguage {
     'no_data': 'कोई डेटा उपलब्ध नहीं है',
     'play': 'खेल',
     'sound': 'आवाज़',
+    'exit': 'बाहर निकलना',
+    'are_you_sure_to_exit': 'क्या आप वाकई बाहर निकलना चाहते हों?',
+    'new_bet': 'नया दांव',
+    'stand': 'खड़ा होना',
+    'hit': 'मार',
+    'you_win': 'आप जीतते हैं!',
+    'you_lose': 'तुम हारे!',
+    'dealer_score': 'डीलर स्कोर',
+    'your_score': 'तुम्हारे अंक',
+    'cancel': 'Cancel',
+    'confirm': 'Confirm',
+    'draw': 'Draw',
   };
 }

@@ -9,6 +9,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 import '../../../controller/sound_controller.dart';
 import '../../../services/local_storage.dart';
 import '../../../utils/color_const.dart';
+import '../../../utils/constants.dart';
 import '../../../utils/dimen_const.dart';
 import '../../../utils/enum.dart';
 import '../../../utils/global.dart';
@@ -221,7 +222,15 @@ class _PlayScreenState extends State<PlayScreen> {
                 kSizedBoxH10,
                 CustomGameButton(
                   onTap: () {
-                    exit(0);
+                    constants.showDefaultDialog(
+                      title: 'exit'.tr,
+                      desc: 'are_you_sure_to_exit'.tr,
+                      icon: Icons.exit_to_app,
+                      iconSize: 40.sp,
+                      onConfirm: () {
+                        exit(0);
+                      },
+                    );
                   },
                   width: 0.2.sh,
                   text: 'exit'.tr,

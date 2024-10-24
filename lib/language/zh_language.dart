@@ -17,5 +17,17 @@ class ZhLanguage {
     'no_data': '沒有找到數據',
     'play': '玩',
     'sound': '聲音',
+    'exit': 'Ra',
+    'are_you_sure_to_exit': '您確定要退出嗎？',
+    'new_bet': 'Cược mới',
+    'stand': 'Đứng',
+    'hit': 'Đánh',
+    'you_win': 'Bạn thắng!',
+    'you_lose': 'Bạn thua!',
+    'dealer_score': 'Điểm đại lý',
+    'your_score': 'Điểm của bạn',
+    'cancel': 'Cancel',
+    'confirm': 'Confirm',
+    'draw': 'Draw',
   };
 }
