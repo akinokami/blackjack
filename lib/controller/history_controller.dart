@@ -16,8 +16,9 @@ class HistoryController extends GetxController {
   void getHistory() {
     isLoading.value = true;
     history.value = List<Map<String, dynamic>>.from(
-        LocalStorage.instance.read(StorageKey.history.name) ?? []);
-    print("history>>>$history");
+            LocalStorage.instance.read(StorageKey.history.name) ?? [])
+        .reversed
+        .toList();
 
     isLoading.value = false;
   }

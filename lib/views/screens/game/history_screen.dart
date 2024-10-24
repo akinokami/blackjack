@@ -70,7 +70,6 @@ class HistoryScreen extends StatelessWidget {
                             : ListView.builder(
                                 shrinkWrap: true,
                                 itemCount: historyController.history.length,
-                                reverse: true,
                                 itemBuilder: (context, index) {
                                   return CustomCard(
                                       widget: Column(
