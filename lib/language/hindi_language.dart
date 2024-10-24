@@ -33,5 +33,6 @@ class HiLanguage {
     'ok': 'ठीक है',
     'insufficient_balance': 'अपर्याप्त शेषराशि',
     'check_balance': 'कृपया अपना बैलेंस जांचें.',
+    'balance': 'संतुलन',
   };
 }

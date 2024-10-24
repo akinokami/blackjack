@@ -33,5 +33,6 @@ class ZhLanguage {
     'ok': '好的',
     'insufficient_balance': '餘額不足',
     'check_balance': '請檢查您的餘額。',
+    'balance': '平衡',
   };
 }

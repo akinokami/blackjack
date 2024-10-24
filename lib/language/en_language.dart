@@ -33,5 +33,6 @@ class EnLanguage {
     'ok': 'OK',
     'insufficient_balance': 'Insufficient balance',
     'check_balance': 'Please check your balance.',
+    'balance': 'Balance',
   };
 }

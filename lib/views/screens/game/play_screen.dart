@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:blackjack/models/player_model.dart';
 import 'package:blackjack/views/screens/game/bj_game.dart';
 import 'package:blackjack/views/screens/game/history_screen.dart';
 import 'package:flutter/material.dart';
@@ -200,9 +201,14 @@ class _PlayScreenState extends State<PlayScreen> {
                     width: 100.h,
                   ),
                 ),
-                // SizedBox(
-                //   height: 40.h,
-                // ),
+                CustomText(
+                  text:
+                      "${'wallet'.tr} : ${LocalStorage.instance.read(StorageKey.balance.name) ?? 0}",
+                  color: premiumColor1,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+                kSizedBoxH10,
                 CustomGameButton(
                   onTap: () {
                     Get.to(() => const BlackJackGame());

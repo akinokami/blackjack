@@ -33,5 +33,6 @@ class KoLanguage {
     'ok': '좋아요',
     'insufficient_balance': '잔액 부족',
     'check_balance': '잔액을 확인해주세요.',
+    'balance': '균형',
   };
 }
