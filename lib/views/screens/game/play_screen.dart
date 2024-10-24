@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:blackjack/models/player_model.dart';
 import 'package:blackjack/views/screens/game/bj_game.dart';
 import 'package:blackjack/views/screens/game/history_screen.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../../../controller/play_controller.dart';
 import '../../../controller/sound_controller.dart';
 import '../../../services/local_storage.dart';
 import '../../../utils/color_const.dart';
@@ -35,7 +35,6 @@ class _PlayScreenState extends State<PlayScreen> {
   @override
   void initState() {
     super.initState();
-
     first = LocalStorage.instance.read(StorageKey.first.name) ?? '';
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       try {
@@ -146,6 +145,7 @@ class _PlayScreenState extends State<PlayScreen> {
   Widget build(BuildContext context) {
     final soundController = Get.put(SoundController());
     soundController.playSound();
+    final playController = Get.put(PlayController());
 
     return Scaffold(
       body: SafeArea(
@@ -201,12 +201,13 @@ class _PlayScreenState extends State<PlayScreen> {
                     width: 100.h,
                   ),
                 ),
-                CustomText(
-                  text:
-                      "${'wallet'.tr} : ${LocalStorage.instance.read(StorageKey.balance.name) ?? 0}",
-                  color: premiumColor1,
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.bold,
+                Obx(
+                  () => CustomText(
+                    text: "${'balance'.tr} : ${playController.balance.value}",
+                    color: premiumColor1,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 kSizedBoxH10,
                 CustomGameButton(
