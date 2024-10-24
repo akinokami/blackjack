@@ -24,8 +24,10 @@ class ViLanguage {
     'you_lose': 'Bạn thua!',
     'dealer_score': 'Điểm đại lý',
     'your_score': 'Điểm của bạn',
-    'cancel': 'Cancel',
-    'confirm': 'Confirm',
-    'draw': 'Draw',
+    'cancel': 'Hủy bỏ',
+    'confirm': 'Xác nhận',
+    'draw': 'Vẽ tranh',
+    'bet_history': 'Lịch sử đặt cược',
+    'ok': 'ĐƯỢC RỒI',
   };
 }

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:blackjack/views/screens/game/bj_game.dart';
+import 'package:blackjack/views/screens/game/history_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -209,6 +210,17 @@ class _PlayScreenState extends State<PlayScreen> {
                   width: 0.2.sh,
                   text: 'play'.tr,
                   textColor: Colors.white,
+                ),
+                kSizedBoxH10,
+                CustomGameButton(
+                  onTap: () {
+                    Get.to(() => const HistoryScreen());
+                  },
+                  width: 0.2.sh,
+                  icon: Icons.history,
+                  text: 'bet_history'.tr,
+                  textColor: Colors.white,
+                  iconColor: Colors.white,
                 ),
                 kSizedBoxH10,
                 CustomGameButton(

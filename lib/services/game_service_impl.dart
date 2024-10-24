@@ -1,8 +1,10 @@
 import 'package:blackjack/services/card_service_impl.dart';
 import 'package:blackjack/services/game_service.dart';
+import 'package:blackjack/services/local_storage.dart';
 import 'package:blackjack/utils/color_const.dart';
 import 'package:blackjack/utils/constants.dart';
 import 'package:blackjack/utils/dimen_const.dart';
+import 'package:blackjack/utils/enum.dart';
 import 'package:blackjack/views/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -78,6 +80,7 @@ class GameServiceImpl extends GameService {
   }
 
   void drawDialog() {
+    updateHistory('draw');
     constants.showDialog(
       title: 'draw'.tr,
       desc: '',
@@ -103,6 +106,7 @@ class GameServiceImpl extends GameService {
     player.won += 1;
     dealer.lose += 1;
     player.wonBet();
+    updateHistory('win');
     constants.showDialog(
       title: 'you_win'.tr,
       titleColor: secondaryColor,
@@ -113,7 +117,7 @@ class GameServiceImpl extends GameService {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomText(
-              text: "+ ${player.bet * BET_MULTIPLICATOR}",
+              text: "+ ${player.bet}",
               color: secondaryColor,
               fontWeight: FontWeight.bold,
               fontSize: 14.sp,
@@ -136,6 +140,7 @@ class GameServiceImpl extends GameService {
     dealer.won += 1;
     player.lose += 1;
     player.lostBet();
+    updateHistory('lose');
     constants.showDialog(
       title: 'you_lose'.tr,
       titleColor: red,
@@ -162,6 +167,19 @@ class GameServiceImpl extends GameService {
         ),
       ),
     );
+  }
+
+  void updateHistory(String type) {
+    List<Map<String, dynamic>> history = [];
+    history = List<Map<String, dynamic>>.from(
+        LocalStorage.instance.read(StorageKey.history.name) ?? []);
+    history.add({
+      "type": type,
+      "bet_amt": player.bet,
+      "dealer_score": getScore(getDealer()),
+      "player_score": getScore(getPlayer())
+    });
+    LocalStorage.instance.write(StorageKey.history.name, history);
   }
 
   @override

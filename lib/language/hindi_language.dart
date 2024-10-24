@@ -26,8 +26,10 @@ class HiLanguage {
     'you_lose': 'तुम हारे!',
     'dealer_score': 'डीलर स्कोर',
     'your_score': 'तुम्हारे अंक',
-    'cancel': 'Cancel',
-    'confirm': 'Confirm',
-    'draw': 'Draw',
+    'cancel': 'रद्द करना',
+    'confirm': 'पुष्टि करना',
+    'draw': 'खींचना',
+    'bet_history': 'शर्त इतिहास',
+    'ok': 'ठीक है',
   };
 }

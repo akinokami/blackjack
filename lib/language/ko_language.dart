@@ -26,8 +26,10 @@ class KoLanguage {
     'you_lose': '당신은 패배합니다!',
     'dealer_score': '딜러점수',
     'your_score': '당신의 점수',
-    'cancel': 'Cancel',
-    'confirm': 'Confirm',
-    'draw': 'Draw',
+    'cancel': '취소',
+    'confirm': '확인하다',
+    'draw': '그리다',
+    'bet_history': '베팅 내역',
+    'ok': '좋아요',
   };
 }

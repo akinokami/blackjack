@@ -29,5 +29,7 @@ class EnLanguage {
     'cancel': 'Cancel',
     'confirm': 'Confirm',
     'draw': 'Draw',
+    'bet_history': 'Bet History',
+    'ok': 'OK',
   };
 }
