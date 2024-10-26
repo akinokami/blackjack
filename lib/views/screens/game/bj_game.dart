@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:playing_cards/playing_cards.dart';
 
+import '../../../utils/color_const.dart';
 import '../../widgets/card.dart';
 import '../../widgets/custom_game_button.dart';
 
@@ -28,14 +29,15 @@ class _BlackJackGameState extends State<BlackJackGame> {
     return Scaffold(
       // backgroundColor: Colors.green[800],
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              "assets/bg.webp",
-            ),
-            fit: BoxFit.cover,
-          ),
-        ),
+        // decoration: const BoxDecoration(
+        //   image: DecorationImage(
+        //     image: AssetImage(
+        //       "assets/bg.png",
+        //     ),
+        //     fit: BoxFit.cover,
+        //   ),
+        // ),
+        color: backgroundColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

@@ -6,7 +6,7 @@ import '../services/local_storage.dart';
 import '../utils/enum.dart';
 
 class PlayController extends GetxController {
-  final balance = 0.obs;
+  final balance = 50000.obs;
 
   @override
   void onInit() {
@@ -16,7 +16,8 @@ class PlayController extends GetxController {
 
   void getBalance() {
     Timer.periodic(const Duration(seconds: 1), (timer) async {
-      balance.value = LocalStorage.instance.read(StorageKey.balance.name) ?? 0;
+      balance.value =
+          LocalStorage.instance.read(StorageKey.balance.name) ?? 50000;
     });
   }
 }

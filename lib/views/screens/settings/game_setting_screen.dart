@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:blackjack/views/screens/settings/game_privacy_policy_screen.dart';
 
 import '../../../controller/sound_controller.dart';
+import '../../../utils/color_const.dart';
 import '../../../utils/dimen_const.dart';
 import '../../widgets/custom_card.dart';
 import '../../widgets/custom_game_button.dart';
@@ -20,14 +21,15 @@ class GameSettingScreen extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
       child: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              "assets/bg.webp",
-            ),
-            fit: BoxFit.cover,
-          ),
-        ),
+        // decoration: const BoxDecoration(
+        //   image: DecorationImage(
+        //     image: AssetImage(
+        //       "assets/bg.png",
+        //     ),
+        //     fit: BoxFit.cover,
+        //   ),
+        // ),
+        color: backgroundColor,
         child: Padding(
           padding: EdgeInsets.all(10.w),
           child: ListView(

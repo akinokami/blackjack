@@ -20,14 +20,15 @@ class HistoryScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                "assets/bg.webp",
-              ),
-              fit: BoxFit.cover,
-            ),
-          ),
+          color: backgroundColor,
+          // decoration: const BoxDecoration(
+          //   image: DecorationImage(
+          //     image: AssetImage(
+          //       "assets/bg.png",
+          //     ),
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
           child: Padding(
             padding: EdgeInsets.all(10.w),
             child: Column(

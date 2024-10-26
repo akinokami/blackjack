@@ -22,13 +22,15 @@ class _GamePrivacyPolicyScreenState extends State<GamePrivacyPolicyScreen> {
     super.initState();
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..loadHtmlString(Global.language == Language.vi.name
-          ? Global.policyVi
-          : Global.language == Language.ko.name
-              ? Global.policyKo
-              : Global.language == Language.hi.name
-                  ? Global.policyHi
-                  : Global.policyEn);
+      ..loadHtmlString(Global.language == Language.zh.name
+          ? Global.policyZh
+          : Global.language == Language.vi.name
+              ? Global.policyVi
+              : Global.language == Language.ko.name
+                  ? Global.policyKo
+                  : Global.language == Language.hi.name
+                      ? Global.policyHi
+                      : Global.policyEn);
   }
 
   @override

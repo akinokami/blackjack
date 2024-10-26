@@ -90,7 +90,7 @@ class GameServiceImpl extends GameService {
       title: 'draw'.tr,
       desc: '',
       widget: SizedBox(
-        height: 40.h,
+        height: 1.sh * 0.12,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -117,7 +117,7 @@ class GameServiceImpl extends GameService {
       titleColor: secondaryColor,
       desc: '',
       widget: SizedBox(
-        height: 55.h,
+        height: 1.sh * 0.15,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -151,7 +151,7 @@ class GameServiceImpl extends GameService {
       titleColor: red,
       desc: '',
       widget: SizedBox(
-        height: 55.h,
+        height: 1.sh * 0.15,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
