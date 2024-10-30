@@ -22,6 +22,6 @@ class LanguageController extends GetxController {
 
   void getLanguage() {
     language.value = LocalStorage.instance.read(StorageKey.language.name) ??
-        Language.en.name;
+        Language.zh.name;
   }
 }
